@@ -1,0 +1,36 @@
+services:
+  mongos-compose-svc:
+    image: mongo
+    container_name: mong
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mern-net
+
+  backend:
+    build: ./server
+    container_name: backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      -  mongos-compose-svc
+    networks:
+      - mern-net
+
+  frontend:
+    build: ./client
+    container_name: frontend
+    ports:
+      - "4997:80"
+    environment:
+      - VITE_API_URL=http://backend:5000/api
+    depends_on:
+      - backend
+    networks:
+      - mern-net
+
+networks:
+  mern-net:
+
+volumes:
+  mongo_data:
