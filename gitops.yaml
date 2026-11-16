@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-test
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Tameem1424/gitops-2.git
+    targetRevision: master
+    path: k8s
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gitops-test
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
