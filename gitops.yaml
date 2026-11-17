@@ -13,7 +13,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: gitops-test
+    namespace: gitops-dev
 
   syncPolicy:
     automated:
