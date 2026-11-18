@@ -3,22 +3,22 @@ kind: Ingress
 metadata:
   name: mern-ingress
 spec:
-  ingressClassName: nginx
+  ingressClassName:  "{{ .Values.ingress.className }}"
   rules:
   - http:
       paths:
-      - path: /api
+      - path: "{{ .Values.ingress.backendPath }}"
         pathType: Prefix
         backend:
           service:
             name: backend-svc
             port:
-              number: 2000
+              number: {{ .Values.backend.service.port }}
 
-      - path: /
+      - path: "{{ .Values.ingress.frontendPath }}"
         pathType: Prefix
         backend:
           service:
             name: frotend-svc
             port:
-              number: 2000
+              number: {{ .Values.frontend.service.port }}

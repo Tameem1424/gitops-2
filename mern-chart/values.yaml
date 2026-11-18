@@ -1,0 +1,30 @@
+namespace: mern-dev
+
+frontend:
+  image: tameem325/mern-frontend
+  replicaCount: 1
+  service:
+    port: 2000
+    targetPort: 80
+
+backend:
+  image: tameem325/mern-backend
+  replicaCount: 1
+  service:
+    port: 2000
+    targetPort: 5000
+
+mongo:
+  image: mongo:8
+  replicaCount: 1
+  service:
+    port: 2000
+    targetPort: 27017
+
+pvc:
+  storage: 5Gi
+
+ingress:
+  className: nginx
+  frontendPath: /
+  backendPath: /api
