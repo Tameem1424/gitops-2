@@ -1,6 +1,6 @@
 🚀 MERN GitOps Platform
 A MERN Stack Todo application deployed on Kubernetes using modern DevOps practices including Docker, Helm, Argo CD, Persistent Volumes, Ingress, and GitOps workflows.
------------------------------------------------------------------
+
 📌 Project Overview
 This project started as a traditional MERN Stack Todo application and was transformed into a complete Kubernetes-based deployment platform.
 
@@ -12,7 +12,6 @@ Persistent storage
 Ingress routing
 Helm packaging
 GitOps with Argo CD
---------------------------------------------------------------------
 🏗 Architecture
 GitHub
    │
@@ -28,7 +27,6 @@ GitHub
    ├── Frontend (React)
    ├── Backend (Node.js / Express)
    └── MongoDB
-------------------------------------------------------------------
 🛠 Technologies Used
 Application Layer
 React.js
@@ -43,7 +41,6 @@ NGINX Ingress Controller
 Helm
 Argo CD
 GitHub
----------------------------------------------------------
 🐳 Docker
 The application was containerized by creating separate Docker images for:
 
@@ -52,7 +49,7 @@ mern-frontend
 Backend
 mern-backend
 Images are pushed to Docker Hub and used by Kubernetes Deployments.
--------------------------------------------------------
+
 ☸️ Kubernetes
 The application is deployed using Kubernetes resources:
 
@@ -77,7 +74,7 @@ MongoDB uses a PersistentVolumeClaim:
 
 mongodb-pvc
 This allows database persistence beyond Pod restarts.
-------------------------------------------------------
+
 📦 Helm
 The Kubernetes manifests were converted into a reusable Helm Chart.
 
@@ -101,7 +98,6 @@ Example:
 backend:
   replicaCount: 1
   image: tameem325/mern-backend
--------------------------------------------------------
 🔄 GitOps with Argo CD
 The entire deployment is managed through Argo CD.
 
@@ -129,7 +125,7 @@ Implemented features:
 ✅ Prune Resources
 
 ✅ Helm Chart Deployment
------------------------------------------
+
 🌐 Access Flow
 Browser
    │
@@ -159,7 +155,6 @@ mern-chart/
     ├── mongo-svc.yaml
     ├── mongo-pvc.yaml
     └── ingress.yaml
----------------------------------------------------------------
 🎯 DevOps Concepts Demonstrated
 Docker Image Creation
 Docker Hub Registry
@@ -168,8 +163,10 @@ Kubernetes Services
 Persistent Storage
 NGINX Ingress
 Helm Charts
+GitOps
 Argo CD
------------------------------------------------------------------
+Self-Healing Infrastructure
+Declarative Deployments
 🙏 Credits
 Original MERN Todo application:
 
