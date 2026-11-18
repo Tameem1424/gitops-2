@@ -2,7 +2,7 @@ namespace: mern-dev
 
 frontend:
   image: tameem325/mern-frontend
-  replicaCount: 3
+  replicaCount: 1
   service:
     port: 2000
     targetPort: 80
